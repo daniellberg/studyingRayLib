@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		D402016F2D43135200FBB064 /* libraylib.5.5.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D402016E2D43135200FBB064 /* libraylib.5.5.0.dylib */; };
+		D40201702D43135200FBB064 /* libraylib.5.5.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = D402016E2D43135200FBB064 /* libraylib.5.5.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		D40201612D43130100FBB064 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -16,10 +21,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		D40201712D43135200FBB064 /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D40201702D43135200FBB064 /* libraylib.5.5.0.dylib in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D40201632D43130100FBB064 /* raylibBasics */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = raylibBasics; sourceTree = BUILT_PRODUCTS_DIR; };
+		D402016E2D43135200FBB064 /* libraylib.5.5.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libraylib.5.5.0.dylib; path = ../../../../../../opt/homebrew/Cellar/raylib/5.5/lib/libraylib.5.5.0.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -35,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D402016F2D43135200FBB064 /* libraylib.5.5.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				D40201652D43130100FBB064 /* raylibBasics */,
+				D402016D2D43135200FBB064 /* Frameworks */,
 				D40201642D43130100FBB064 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,6 +76,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		D402016D2D43135200FBB064 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D402016E2D43135200FBB064 /* libraylib.5.5.0.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -67,6 +94,7 @@
 				D402015F2D43130100FBB064 /* Sources */,
 				D40201602D43130100FBB064 /* Frameworks */,
 				D40201612D43130100FBB064 /* CopyFiles */,
+				D40201712D43135200FBB064 /* Embed Libraries */,
 			);
 			buildRules = (
 			);
@@ -245,7 +273,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/Cellar/raylib/5.5/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYSTEM_HEADER_SEARCH_PATHS = /opt/homebrew/include;
 			};
 			name = Debug;
 		};
@@ -253,7 +286,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/Cellar/raylib/5.5/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYSTEM_HEADER_SEARCH_PATHS = /opt/homebrew/include;
 			};
 			name = Release;
 		};
